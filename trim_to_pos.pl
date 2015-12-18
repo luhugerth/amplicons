@@ -51,8 +51,8 @@ my $len = $rev - $fwd;
 
 while (my $record = $infile->next_seq){
 	my $seq = $record->seq;
-	$seq=~/^(.+){$fwd}(.+){$len}/;
-	my $amplicon = $2;
+	$seq=~/^.{$fwd}(.{$len})/;
+	my $amplicon = $1;
 	print ">".$record->display_id."\n";
 	print "$amplicon\n";
 }
