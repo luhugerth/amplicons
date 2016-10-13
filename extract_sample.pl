@@ -14,8 +14,7 @@ extract_sample
 		--sample: File with sequence IDs separated by tab and linebreak, optional '>' before ID
 					Cluster size information will be ignored.
 		--type: Database is either fasta (default) or TSV (eg SAM)
-	    
-	    database.fasta: Fasta or TSV formated file with read ID in the first field
+	   	--database: Fasta or TSV formated file with read ID in the first field
 
 =head1 AUTHOR
 

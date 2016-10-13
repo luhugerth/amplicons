@@ -8,12 +8,12 @@ amplicon_stats
 
 	trim_to_primers [--help] [--verbose] [--include] --fwd=STRING --rev=STRING db.fasta
 
-	  Gives the length of amplicons.
+	 Outputs only the part of a sequence found between the given primers 
 	
 		--fwd, rev: primers to generate amplicons
 		--include: keep primer sequences in the output; default, remove
 		db.fasta: fasta file (gapped or not); output will be unaligned
-	    --help: This info.
+		--help: This info.
 	    
 
 =head1 AUTHOR
@@ -72,6 +72,7 @@ $rev = regenerate($rev);
 while (my $record = $infile->next_seq){
 	my $seq = $record->seq;
 	$seq=~s/_//g;
+	$seq=~s/U/T/g;
 	if ($seq=~/$fwd/ and $seq=~/$rev/){
 		my $amplicon;
 		if ($include){
